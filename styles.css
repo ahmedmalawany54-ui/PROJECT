@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg: #07131c;
+    --panel: #102331;
+    --panel2: #142b3a;
+    --green: #34d399;
+    --green2: #059669;
+    --blue: #38bdf8;
+    --muted: #94a3b8;
+    --line: rgba(148,163,184,.17);
+}
+
+.stApp {
+    background:
+        radial-gradient(ellipse at 10% 0%, rgba(5,150,105,.19), transparent 34%),
+        radial-gradient(ellipse at 90% 5%, rgba(14,116,144,.13), transparent 32%),
+        linear-gradient(145deg, #06111a, #0a1b27 55%, #07131c);
+    color: #e8f2f7;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.block-container { max-width: 1550px; padding-top: 1.5rem; padding-bottom: 2.5rem; }
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0d202d, #091722);
+    border-right: 1px solid var(--line);
+}
+[data-testid="stHeader"] { background: rgba(7,19,28,.75); }
+
+h1, h2, h3, h4 { color: #f0fdf4 !important; letter-spacing: -.02em; }
+
+.hero { padding: 4px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.eyebrow { color: var(--green); font-size: .72rem; font-weight: 800; letter-spacing: .17em; margin-bottom: 7px; }
+.hero-title {
+    font-size: clamp(1.7rem, 3vw, 2.55rem); font-weight: 900; line-height: 1.1;
+    background: linear-gradient(90deg, #f0fdf4, #6ee7b7 70%, #7dd3fc);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-subtitle { color: #a8bac8; font-size: .9rem; margin-top: 8px; }
+
+.panel {
+    background: linear-gradient(145deg, rgba(20,43,58,.96), rgba(12,30,42,.96));
+    border: 1px solid var(--line); border-radius: 17px; padding: 18px; margin-bottom: 15px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.16);
+}
+.panel-accent { border-top: 2px solid rgba(52,211,153,.75); }
+
+.metric-card {
+    background: linear-gradient(145deg, #142c3b, #0e202e);
+    border: 1px solid var(--line); border-radius: 15px; padding: 15px; min-height: 102px;
+}
+.metric-label { color: #9db1bf; font-size: .72rem; font-weight: 700; letter-spacing: .06em; }
+.metric-value { color: #6ee7b7; font-size: 1.55rem; font-weight: 900; margin-top: 8px; line-height: 1.15; }
+.metric-note { color: #7890a2; font-size: .7rem; margin-top: 5px; }
+
+.status-strip {
+    background: linear-gradient(90deg, rgba(5,150,105,.18), rgba(14,116,144,.13));
+    border: 1px solid rgba(52,211,153,.24); border-radius: 12px;
+    padding: 12px 15px; margin: 15px 0 20px; color: #bbf7d0; font-size: .85rem;
+}
+
+.coord-box {
+    background: rgba(5,15,23,.55); border: 1px solid rgba(52,211,153,.2);
+    border-radius: 12px; padding: 13px; text-align: center; margin: 10px 0;
+}
+.coord-value { color: #6ee7b7; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.08rem; font-weight: 800; }
+.muted { color: var(--muted); font-size: .8rem; }
+
+.stButton > button, .stDownloadButton > button, .stFormSubmitButton > button {
+    background: linear-gradient(110deg, #059669, #047857); color: white !important;
+    border: 1px solid rgba(52,211,153,.4); border-radius: 10px; min-height: 42px; font-weight: 800;
+}
+.stButton > button:hover, .stDownloadButton > button:hover, .stFormSubmitButton > button:hover {
+    background: linear-gradient(110deg, #10b981, #059669); border-color: #6ee7b7;
+}
+
+[data-testid="stMetric"] { background: rgba(16,35,49,.8); border: 1px solid var(--line); padding: 12px; border-radius: 13px; }
+[data-testid="stMetricLabel"] { color: #9db1bf !important; }
+[data-testid="stMetricValue"] { color: #f0fdf4 !important; }
+
+[data-baseweb="input"] > div, [data-baseweb="textarea"] > div, [data-baseweb="select"] > div {
+    background: #102331 !important; border-color: rgba(148,163,184,.25) !important;
+}
+
+.aegis-footer { text-align: center; color: #718697; font-size: .74rem; padding: 22px 0 5px; }
+
+/* Arabic mode: right-to-left text inside custom panels only (map/charts stay LTR) */
+.rtl { direction: rtl; text-align: right; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .block-container { padding-left: .8rem; padding-right: .8rem; padding-top: 1rem; }
+    .panel { padding: 13px; border-radius: 13px; }
+    .metric-card { min-height: 88px; padding: 11px; }
+    .metric-value { font-size: 1.25rem; }
+    .hero-title { font-size: 1.5rem; }
+    .coord-value { font-size: .95rem; }
+}
